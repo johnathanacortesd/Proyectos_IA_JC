@@ -4,14 +4,14 @@ import streamlit as st
 from streamlit_card import card
 
 st.set_page_config(
-    page_title="Portafolio de Proyectos de IA - John",
+    page_title="Portafolio de Proyectos de IA - Johnathan Cortés",
     page_icon="🤖",
     layout="wide"
 )
 
 # --- Título y Descripción del Hub ---
 st.title("🤖 Portafolio de Proyectos de IA")
-st.markdown("### Por John A. Scripter") # Puedes cambiar esto por tu nombre real
+st.markdown("### Por Johnathan Cortés") # Puedes cambiar esto por tu nombre real
 st.markdown("""
 Bienvenido a mi centro de aplicaciones de Inteligencia Artificial. Cada herramienta ha sido diseñada para resolver problemas específicos del mundo real, desde el análisis de medios hasta la transcripción de audio y la automatización de procesos de datos (ETL).
 """)
@@ -25,6 +25,7 @@ PROYECTOS = [
         "titulo": "📰 Sistema de Análisis de Noticias con IA",
         "descripcion": "Una potente aplicación que combina reglas heurísticas y LLMs para analizar dossieres de noticias. Realiza clasificación, resumen y análisis de sentimiento de forma automatizada.",
         "url": "https://api-hibrid-tono-tema.streamlit.app/",
+        
         "imagen": "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "tags": ["PNL", "LLM", "OpenAI", "Análisis de Medios", "Streamlit"]
     },
