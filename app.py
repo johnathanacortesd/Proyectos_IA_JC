@@ -1,82 +1,97 @@
 # hub_app/hub_app.py
 
 import streamlit as st
-from streamlit_card import card # Necesitarás instalar streamlit-card
+from streamlit_card import card
 
 st.set_page_config(
-    page_title="Hub de Proyectos de IA",
-    page_icon="🧠",
+    page_title="Portafolio de Proyectos de IA - John",
+    page_icon="🤖",
     layout="wide"
 )
 
 # --- Título y Descripción del Hub ---
-st.title("🧠 Mi Hub de Proyectos de IA")
+st.title("🤖 Portafolio de Proyectos de IA")
+st.markdown("### Por John A. Scripter") # Puedes cambiar esto por tu nombre real
 st.markdown("""
-Bienvenido a mi portafolio de herramientas y cuadernos de Inteligencia Artificial.
-Aquí encontrarás una colección de aplicaciones interactivas y análisis detallados.
-¡Explora, experimenta y no dudes en contactarme!
+Bienvenido a mi centro de aplicaciones de Inteligencia Artificial. Cada herramienta ha sido diseñada para resolver problemas específicos del mundo real, desde el análisis de medios hasta la transcripción de audio y la automatización de procesos de datos (ETL).
 """)
+st.write("---")
 
 # --- Datos de los Proyectos ---
-# Aquí es donde defines cada proyecto. Añade un nuevo diccionario a esta lista para cada nuevo proyecto.
+# Define cada proyecto aquí. Para las imágenes, puedes usar los enlaces que he puesto
+# o subirlas a un servicio como imgur.com o al propio repositorio de GitHub.
 PROYECTOS = [
     {
-        "titulo": "📊 Analizador de Tono y Tema",
-        "descripcion": "Una aplicación web para analizar el sentimiento y clasificar por temas textos extraídos de archivos Excel. Ideal para analizar comentarios de clientes, encuestas o redes sociales.",
-        "tipo": "App de Streamlit",
-        "url": "https://tu-nombre-de-app.streamlit.app", # <-- ¡REEMPLAZA ESTA URL!
-        "imagen": "https://cdn-icons-png.flaticon.com/512/7165/7165511.png",
-        "tags": ["PNL", "Análisis de Sentimiento", "Clasificación", "Streamlit"]
+        "titulo": "📰 Sistema de Análisis de Noticias con IA",
+        "descripcion": "Una potente aplicación que combina reglas heurísticas y LLMs para analizar dossieres de noticias. Realiza clasificación, resumen y análisis de sentimiento de forma automatizada.",
+        "url": "https://api-hibrid-tono-tema.streamlit.app/",
+        "imagen": "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "tags": ["PNL", "LLM", "OpenAI", "Análisis de Medios", "Streamlit"]
     },
     {
-        "titulo": "🖼️ Clasificador de Imágenes (ResNet)",
-        "descripcion": "Un cuaderno de Google Colab que utiliza un modelo pre-entrenado (ResNet50) para clasificar el contenido de imágenes. Incluye visualizaciones y explicaciones del proceso.",
-        "tipo": "Cuaderno de Colab",
-        "url": "https://colab.research.google.com/github/tu-usuario/mi-hub-de-proyectos/blob/main/proyecto_cuaderno_vision/analisis_imagenes.ipynb", # <-- ¡REEMPLAZA ESTA URL!
-        "imagen": "https://cdn-icons-png.flaticon.com/512/1048/1048953.png",
-        "tags": ["Visión por Computadora", "Deep Learning", "PyTorch", "Colab"]
+        "titulo": "🎧 Transcriptor Pro - Johnascriptor",
+        "descripcion": "Análisis y transcripción de audio a velocidades récord utilizando la API de Groq. Ideal para convertir reuniones, entrevistas o cualquier archivo de audio en texto estructurado y analizable.",
+        "url": "https://johnascriber.streamlit.app/",
+        "imagen": "https://images.unsplash.com/photo-1590602847923-45c1363a233c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "tags": ["Transcripción de Audio", "Groq API", "Whisper", "PNL", "Streamlit"]
     },
     {
-        "titulo": "📈 Dashboard de Ventas Interactivo",
-        "descripcion": "Una aplicación que visualiza datos de ventas desde un archivo CSV, permitiendo filtrar por fecha, producto y región para un análisis dinámico.",
-        "tipo": "App de Streamlit",
-        "url": "https://tu-otra-app.streamlit.app", # <-- ¡REEMPLAZA ESTA URL!
-        "imagen": "https://cdn-icons-png.flaticon.com/512/138/138343.png",
-        "tags": ["Visualización de Datos", "Pandas", "Streamlit", "Business Intelligence"]
+        "titulo": "✅ Herramienta de Clasificación - JohnAdmin",
+        "descripcion": "Una solución ágil y segura para la clasificación inmediata de noticias desde un archivo Excel. Diseñada para eliminar demoras y cuellos de botella en flujos de trabajo editoriales.",
+        "url": "https://johnadmin.streamlit.app/", # Asumí esta URL, ¡ajústala si es diferente!
+        "imagen": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "tags": ["Clasificación", "Productividad", "Excel", "Gestión de Datos", "Streamlit"]
     },
-    # --- Añade más proyectos aquí ---
+    {
+        "titulo": "🚗 Herramienta ETL para Nissan",
+        "descripcion": "Una aplicación especializada para procesos de Extracción, Transformación y Carga (ETL) de datos. Automatiza y simplifica la manipulación de datos para análisis específicos de negocio.",
+        "url": "https://nissan3-mu89mzqbp64tduunjbgdhx.streamlit.app/",
+        "imagen": "https://images.unsplash.com/photo-1553440569-e3d8e5e1e15e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+        "tags": ["ETL", "Automatización", "Pandas", "Análisis de Datos", "Streamlit"]
+    },
 ]
 
-
 # --- Renderizar las Tarjetas de Proyectos ---
-st.header("🚀 Aplicaciones Interactivas")
-cols_apps = st.columns(3) # Crear 3 columnas para las apps
-i = 0
-for p in PROYECTOS:
-    if p["tipo"] == "App de Streamlit":
-        with cols_apps[i % 3]:
-            card(
-                title=p["titulo"],
-                text=p["descripcion"],
-                image=p["imagen"],
-                url=p["url"],
+# Dividimos en filas de 2 para un mejor aspecto visual en pantallas anchas
+num_proyectos = len(PROYECTOS)
+columnas_por_fila = 2
+
+for i in range(0, num_proyectos, columnas_por_fila):
+    # Selecciona los proyectos para la fila actual
+    proyectos_fila = PROYECTOS[i:i+columnas_por_fila]
+    
+    # Crea las columnas para esta fila
+    cols = st.columns(columnas_por_fila)
+    
+    for j, proyecto in enumerate(proyectos_fila):
+        with cols[j]:
+            # El componente card es clickeable en su totalidad
+            has_clicked = card(
+                title=proyecto["titulo"],
+                text=proyecto["descripcion"],
+                image=proyecto["imagen"],
+                url=proyecto["url"],
+                on_click=lambda: None, # Placeholder para la funcionalidad de click
                 styles={
-                    "card": { "margin": "10px", "height": "400px" },
-                    "text": { "font-family": "sans-serif" }
+                    "card": {
+                        "width": "100%",  # La tarjeta ocupa todo el ancho de la columna
+                        "height": "450px",
+                        "margin": "10px",
+                        "box-shadow": "0 4px 8px 0 rgba(0,0,0,0.2)",
+                        "transition": "0.3s"
+                    },
+                    "filter": {
+                        "background-color": "rgba(0, 0, 0, 0.4)"  # Oscurece la imagen para que el texto resalte
+                    },
+                    "text": {
+                        "font-family": "sans-serif",
+                    }
                 }
             )
-        i += 1
+            # Añadimos los tags debajo de la tarjeta para mayor claridad
+            tags_html = " ".join([f"<span style='background-color: #2a3a57; color: white; padding: 4px 8px; border-radius: 12px; margin: 2px; display: inline-block; font-size: 0.8em;'>{tag}</span>" for tag in proyecto["tags"]])
+            st.markdown(f"<div style='padding-left: 15px;'>{tags_html}</div>", unsafe_allow_html=True)
 
-st.header("🔬 Cuadernos de Análisis en Colab")
-cols_notebooks = st.columns(3) # Crear 3 columnas para los cuadernos
-j = 0
-for p in PROYECTOS:
-    if p["tipo"] == "Cuaderno de Colab":
-        with cols_notebooks[j % 3]:
-            # Usamos un botón para el enlace "Abrir en Colab"
-            st.image(p["imagen"], width=100)
-            st.subheader(p["titulo"])
-            st.write(p["descripcion"])
-            st.markdown(f"**Tags:** `{'`, `'.join(p['tags'])}`")
-            st.link_button("Abrir en Google Colab", p["url"])
-        j += 1
+
+st.write("---")
+st.markdown("Creado por Johanthan Cortés 🤖 usando [Streamlit](https://streamlit.io).")
